@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <dubbo:protocol name="dubbo" port="20880"></dubbo:protocol>
+
+    <dubbo:application name="Spike_Service"/>
+    <dubbo:registry address="zookeeper://111.231.215.95:2181" />
+
+    <dubbo:service interface="com.doude.service.MsmerchantService" ref="msmerchantServiceImpl"/>
+    <bean id="msmerchantServiceImpl" class="com.doude.service.MsmerchantServiceImpl"/>
+
+    <dubbo:service interface="com.doude.service.MsoderService" ref="msoderServiceImpl"/>
+    <bean id="msoderServiceImpl" class="com.doude.service.MsoderServiceImpl"/>
+
+    <dubbo:service interface="com.doude.service.MsproductService" ref="msproductServiceImpl"/>
+    <bean id="msproductServiceImpl" class="com.doude.service.MsproductServiceImpl"/>
+
+    <dubbo:service interface="com.doude.service.MsproductDetailService" ref="msproductDetailServiceImpl"/>
+    <bean id="msproductDetailServiceImpl" class="com.doude.service.MsproductDetailServiceImpl"/>
+
+    <dubbo:service interface="com.doude.service.test.PersonService" ref="personService"/>
+    <bean id="personService" class="com.doude.service.test.PersonServiceImpl"/>
+
+    <dubbo:service interface="com.doude.service.MsUserService" ref="msUserServiceImpl"/>
+    <bean id="msUserServiceImpl" class="com.doude.service.MsUserServiceImpl"/>
+
+    <dubbo:service interface="com.doude.service.pay.WeixinPay" ref="weixinPayImpl"/>
+    <bean id="weixinPayImpl" class="com.doude.service.pay.WeixinPayImpl"/>
+
+    <dubbo:service interface="com.doude.service.pay.Yinghangkapay" ref="yinghangkapayImpl"/>
+    <bean id="yinghangkapayImpl" class="com.doude.service.pay.YinghangkapayImpl"/>
+
+    <dubbo:service interface="com.doude.service.pay.ZhifubaoPay" ref="zhifubaoPayImpl"/>
+    <bean id="zhifubaoPayImpl" class="com.doude.service.pay.ZhifubaoPayImpl"/>
+
+
+
+
+</beans>

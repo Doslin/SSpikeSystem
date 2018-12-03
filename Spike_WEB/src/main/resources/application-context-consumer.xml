@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+    <dubbo:application name="Spike_WEB"/>
+    <dubbo:registry address="zookeeper://111.231.215.95:2181" />
+    <dubbo:reference id="msmerchantService" interface="com.doude.service.MsmerchantService"/>
+    <dubbo:reference id="msoderService" interface="com.doude.service.MsoderService"/>
+    <dubbo:reference id="msproductService" interface="com.doude.service.MsproductService"/>
+    <dubbo:reference id="msproductDetailService" interface="com.doude.service.MsproductDetailService"/>
+    <dubbo:reference id="msUserService" interface="com.doude.service.MsUserService"/>
+    <dubbo:reference id="personService" interface="com.doude.service.test.PersonService"/>
+    <dubbo:reference id="weixinPay" interface="com.doude.service.pay.WeixinPay"/>
+    <dubbo:reference id="yinghangkapay" interface="com.doude.service.pay.Yinghangkapay"/>
+    <dubbo:reference id="zhifubaoPay" interface="com.doude.service.pay.ZhifubaoPay"/>
+
+
+
+
+
+
+
+</beans>
